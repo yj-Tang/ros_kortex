@@ -22,14 +22,14 @@
         <!-- Run the macros -->
 
         <!-- For gazebo-->
-        <xacro:if value="${sim}">
+        <!--<xacro:if value="${sim}">
             <link name="world" />
             <joint name="world_to_root" type="fixed">
                 <child link="${prefix}base_link" />
                 <parent link="world" />
                 <origin xyz="0 0 0" rpy="0 0 0" />    
             </joint> 
-        </xacro:if>
+        </xacro:if> -->
         
         <!-- Load the arm -->
         <xacro:load_arm parent="" dof="${dof}" vision="${vision}" prefix="${prefix}">
@@ -61,11 +61,11 @@
                 <xacro:load_gazebo_gripper_transmissions prefix="${prefix}"/>
             </xacro:unless>
 
-            <gazebo>
+            <!-- <gazebo>
                 <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
                     <legacyModeNS>true</legacyModeNS>
                 </plugin>
-            </gazebo>
+            </gazebo>-->
 
         </xacro:if>
     </xacro:macro>

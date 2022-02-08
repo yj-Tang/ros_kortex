@@ -58,7 +58,8 @@ KortexArmSimulation::KortexArmSimulation(ros::NodeHandle& node_handle): m_node_h
 
     // Arm information
     urdf::Model model;
-    model.initParam("/" + m_robot_name + "/robot_description");
+    // model.initParam("/" + m_robot_name + "/robot_description");
+    model.initParam("/robot_description");
     ros::param::get("~dof", m_degrees_of_freedom);
     ros::param::get("~arm", m_arm_name);
     ros::param::get("~joint_names", m_arm_joint_names);
@@ -123,7 +124,7 @@ KortexArmSimulation::KortexArmSimulation(ros::NodeHandle& node_handle): m_node_h
         ROS_ERROR("%s", error_string.c_str());
         throw(std::runtime_error(error_string));
     }
-    if (!tree.getChain(m_prefix + "base_link", m_prefix + "tool_frame", m_chain))
+    if (!tree.getChain(m_prefix + "kinova_arm_base_link", m_prefix + "tool_frame", m_chain))
     {
         const std::string error_string("Failed to extract kinematic chain from parsed tree!"); 
         ROS_ERROR("%s", error_string.c_str());

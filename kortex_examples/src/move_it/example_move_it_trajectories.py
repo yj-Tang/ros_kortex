@@ -65,7 +65,7 @@ class ExampleMoveItTrajectories(object):
         self.gripper_joint_name = gripper_joint_names[0]
       else:
         self.gripper_joint_name = ""
-      self.degrees_of_freedom = rospy.get_param(rospy.get_namespace() + "degrees_of_freedom", 7)
+      self.degrees_of_freedom = rospy.get_param(rospy.get_namespace() + "degrees_of_freedom", 6)
 
       # Create the MoveItInterface necessary objects
       arm_group_name = "arm"
