@@ -30,12 +30,12 @@ These are the instructions to run in a terminal to create the workspace, clone t
         conan profile update settings.compiler.libcxx=libstdc++11 default
         mkdir -p catkin_workspace/src
         cd catkin_workspace/src
-        git clone https://github.com/Kinovarobotics/ros_kortex.git
+        git clone https://github.com/yj-Tang/ros_kortex
         cd ../
         rosdep install --from-paths src --ignore-src -y
 
 Then, to build and source the workspace:
-
+        (don't forget to checkout to the melodic-devel/noetic-devel version according to the os you have)
         catkin_make
         source devel/setup.bash
 
